@@ -1,0 +1,58 @@
+@charset "utf-8";
+/* CSS Document */
+
+#modeloRana{
+    position:fixed;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index:100;
+    transition: transform 1s ease-out;
+}
+
+
+.custom-shape-divider-bottom-1782702114 {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    overflow: hidden;
+    line-height: 0;
+    transform: rotate(180deg);
+    margin-bottom: -1px;
+}
+
+.custom-shape-divider-bottom-1782702114 svg {
+    position: relative;
+    display: block;
+    width: calc(100% + 1.3px);
+    height: 67px;
+}
+
+.custom-shape-divider-bottom-1782702114 .shape-fill {
+    fill: #198754;
+}
+
+
+
+
+.custom-shape-divider-top-1783304606 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    overflow: hidden;
+    line-height: 0;
+    
+}
+
+.custom-shape-divider-top-1783304606 svg {
+    position: relative;
+    display: block;
+    width: calc(100% + 1.3px);
+    height: 80px;
+}
+
+.custom-shape-divider-top-1783304606 .shape-fill {
+    fill: #198754;
+}
