@@ -1,7 +1,9 @@
 const modeloRana=document.getElementById("modeloRana");
 const sections = Array.from(document.querySelectorAll("section"));
 
-const shiftPositions=[25,-20,0,25];
+//POSICIONES DENTRO DE LAS SECCIONES NO TOCAR
+const shiftPositions=[25,-25,0,25];
+//POSICIONES DE LOS ANGULOS NO TOCAR
 const cameraOrbits=[[135,90],[135,90],[-180,0],[45,90]];
 
 const interpolate =(start,end,progress)=> start+(end-start)*progress;

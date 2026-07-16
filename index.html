@@ -5,7 +5,10 @@
     <title>EduFauna</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="style.css">
-    
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Cherry+Bomb+One&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Comic+Neue:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap" rel="stylesheet">
     <script src="https://cdn.lordicon.com/lordicon.js"></script>
     <script src="https://cdn.lordicon.com/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -15,7 +18,7 @@
     <header>
         <div class="container-fluid">
             <nav class="navbar navbar-expand-sm fixed-top navbar-dark bg-verde justify-content-center">
-                <a class="navbar-brand m-2" href="index.html">
+                <a class="navbar-brand-custom m-2 " href="index.html">
                     <img src="images/blanco.png" alt="Logo" class="img-fluid" width="80">
                 </a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarcolapso">
@@ -89,12 +92,12 @@
                 <div class="container py-5">
                     <div class="row align-items-center">
                         <div class="col-md-6 text-start">
-                            <div class="bg-warning border rounded border-warning p-4 mb-3">
-                                <h1 class="display-4 fw-bold">Explora la selva con EduFauna!</h1>
-                                <h2 class="fw-bold">Descubre secretos de la fauna</h2>
-                                <p class="lead">Aprende y diviertete con nosotros</p>
+                            <div class="bg-amarillo border rounded border-warning p-4 mb-3">
+                                <h1 class="cherry-bomb-one-regular">Explora la selva con EduFauna!</h1>
+                                <h2 class=" cherry-bomb-one-regular">Descubre secretos de la fauna</h2>
+                                <p class="text-comic-neue-bold fw-bold">Aprende y diviertete con nosotros</p>
                             </div>   
-                            <button type="button" class="btn btn-warning btn-lg px-5 my-3">Mas info</button>
+                            <button type="button" class=" btn btn-warning bg-amarillo btn-lg px-5 my-3 rounded-pill">Mas info</button>
                         </div>
                     </div>
                 </div>
@@ -117,8 +120,8 @@
                 <img src="images/negro.gif" class="img-fluidS" width="150">
             </div>
             <div class="col-sm-6">
-                <h1 class="fw-bold display-1">Titulo</h1>
-                <p class="display-4">lorem ipsum <span class="text-warning">dolor</span> sit amet</p>
+                <h1 class="fw-bold display-1 text-white">Titulo</h1>
+                <p class="display-4 text-white">lorem ipsum <span class="text-warning">dolor</span> sit amet</p>
             </div>  
             <div class="col-md-6 text-center"></div>
         </div>
@@ -134,7 +137,7 @@
                     </div>
                     <div class="col-sm-4">
                         <h1>Titulo</h1>
-                        <button type="button" class="btn btn-warning btn-lg px-5 my-3">Mas info</button>
+                        <button type="button" class="btn rounded-pill btn-warning btn-lg px-5 my-3">Mas info</button>
                     </div>
                     <div class="col-sm-4">
                         <img src="images/blanco.png" class="img-fluidS" width="150">
@@ -198,6 +201,9 @@
                     </ul>
                 </div>
             </nav>
+            <div class="col-md-4 text-md-end text-center text-white py-3">
+                    <span class="fs-5">🌿 Copyright 🌿</span>
+            </div>
         </div>
     </footer>
     <script src="script.js"></script>
