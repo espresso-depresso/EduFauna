@@ -259,3 +259,73 @@ main {
 }
 
 
+
+
+@property --angle {
+    syntax: '<angle>';
+    initial-value: 0deg;
+    inherits: false;
+}
+
+.rainbow-card {
+    position: relative;
+    transition: transform 0.3s ease;
+    isolation: isolate; 
+}
+
+.rainbow-card::before {
+    content: "";
+    position: absolute;
+    top: -15px;
+    left: -15px;
+    right: -15px;
+    bottom: -15px;
+    
+    background: conic-gradient(from var(--angle), #5C8A3D, #CDD69F, #F2B95F, #E0593E, #6E3B3A, #1E4E5F, #2B7A78, #7BC5C1, #5C8A3D);
+    border-radius: calc(1rem + 15px); 
+    z-index: -2;
+    opacity: 0;
+    filter: blur(14px); /* Efecto neón */
+    transition: opacity 0.3s ease;
+
+    -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    padding: 15px; 
+}
+
+.rainbow-card::after {
+    content: "";
+    position: absolute;
+    top: -4px;
+    left: -4px;
+    right: -4px;
+    bottom: -4px;
+    
+    background: conic-gradient(from var(--angle), #5C8A3D, #CDD69F, #F2B95F, #E0593E, #6E3B3A, #1E4E5F, #2B7A78, #7BC5C1, #5C8A3D);
+    border-radius: calc(1rem + 4px); 
+    z-index: -1;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+
+    -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    padding: 4px; 
+}
+
+.rainbow-card:hover {
+    transform: translateY(-6px);
+}
+
+.rainbow-card:hover::before,
+.rainbow-card:hover::after {
+    opacity: 1;
+    animation: rotateRainbow 5s linear infinite;
+}
+
+@keyframes rotateRainbow {
+    to {
+        --angle: 360deg;
+    }
+}
