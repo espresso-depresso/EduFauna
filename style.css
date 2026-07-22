@@ -329,3 +329,169 @@ main {
         --angle: 360deg;
     }
 }
+
+
+/* Esto hace que la cajita flote fija abajo a la derecha de la pantalla */
+#chatbot-container {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 320px;
+    background-color: #ffffff;
+    border: 2px solid #2e7d32; /* Color verde naturaleza */
+    border-radius: 12px;
+    box-shadow: 0px 6px 16px rgba(0,0,0,0.15); /* Sombra para que se vea flotando */
+    font-family: sans-serif;
+    z-index: 2000; /* Asegura que se vea por encima de mapas u otros elementos */
+    transition: all 0.3s ease-in-out;
+}
+
+/* El diseño de la barra del título */
+#chatbot-header {
+    background-color: #2e7d32;
+    color: white;
+    padding: 12px;
+    border-radius: 10px 10px 0 0;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+/* El cuerpo del chat */
+#chatbot-body {
+    height: 380px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+/* El contenedor donde aparecen las burbujas de texto */
+#chatbot-messages {
+    padding: 12px;
+    height: 320px;
+    overflow-y: auto; /* Si hay muchos mensajes, aparece una barra de scroll */
+    background-color: #f9f9f9;
+}
+
+/* Burbujas del Bot (Verdes) */
+.bot-msg {
+    background-color: #e8f5e9;
+    color: #1b5e20;
+    padding: 10px;
+    border-radius: 12px 12px 12px 2px;
+    margin: 8px 0;
+    max-width: 85%;
+    font-size: 14px;
+}
+
+.bot-msg-loading {
+    color: #777;
+    font-style: italic;
+    font-size: 13px;
+}
+
+/* Burbujas del Usuario (Azules y pegadas a la derecha) */
+.user-msg {
+    background-color: #e1f5fe;
+    color: #0d47a1;
+    padding: 10px;
+    border-radius: 12px 12px 2px 12px;
+    margin: 8px 0;
+    max-width: 85%;
+    margin-left: auto; /* Lo empuja a la derecha */
+    text-align: right;
+    font-size: 14px;
+}
+
+/* Espacio donde escribes */
+#chatbot-input-area {
+    display: flex;
+    border-top: 1px solid #e0e0e0;
+    padding: 4px;
+    background-color: #fff;
+    border-radius: 0 0 10px 10px;
+}
+
+#chatbot-input-area input {
+    flex: 1;
+    padding: 10px;
+    border: none;
+    outline: none;
+}
+
+#chatbot-input-area button {
+    background-color: #2e7d32;
+    color: white;
+    border: none;
+    padding: 0 16px;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+/* --- ESTA ES LA MAGIA PARA ABRIR Y CERRAR --- */
+/* Cuando el chat tenga la clase "chatbot-closed", ocultamos el cuerpo */
+.chatbot-closed #chatbot-body {
+    display: none;
+}
+
+/* Cuando esté cerrado, la barra superior se encoge un poco */
+.chatbot-closed {
+    width: 220px !important;
+}
+
+
+/* ANIMACIÓN DE ESCRIBIENDO */
+
+.bot-msg-loading {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    color: #555;
+    font-style: normal;
+}
+
+/* Texto */
+.typing-text {
+    font-size: 14px;
+}
+
+/* Puntos */
+.typing-dots {
+    display: inline-flex;
+    gap: 2px;
+}
+
+/* Animación */
+
+.typing-dots span {
+
+    animation:
+        escribirPunto
+        1.4s infinite;
+
+    font-weight: bold;
+}
+
+.typing-dots span:nth-child(2) {
+
+    animation-delay:
+        0.2s;
+}
+
+.typing-dots span:nth-child(3) {
+
+    animation-delay:
+        0.4s;
+}
+
+@keyframes escribirPunto {
+
+    0%,
+    60%,
+    100% {
+        opacity: 0.2;
+    }
+
+    30% {
+        opacity: 1;
+    }
+}
