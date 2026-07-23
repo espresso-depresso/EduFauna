@@ -85,9 +85,18 @@
     </header>
 
 <main>
+    
+<audio id="audio" src="sonido.mp3" preload="auto"></audio>
 
-<!--  <model-viewer src="manatee.glb" id="modeloRana" camera-orbit="135deg 90deg" style="transform: translateX(25%);" autoplay></model-viewer>
--->   
+   <!--
+<model-viewer 
+        src="manatee.glb" 
+        id="modeloRana" 
+        camera-orbit="135deg 90deg" 
+        style="transform: translateX(25%);" 
+        autoplay>
+    </model-viewer>
+    --> 
 
 
     <section>
@@ -116,16 +125,18 @@
                 </svg>
             </div>
 
+
+
         </div>
     </section>
     
 
-    <section class="container-fluid bg-azul-oscuro overflow-hidden pt-5 pb-5" id="explorar-biodiversidad">
+<section class="container-fluid bg-azul-oscuro overflow-hidden pt-5 pb-5" id="explorar-biodiversidad">
 
     <div class="container py-5">
 
         <!-- TÍTULO -->
-        <div class="text-center text-white mb-5">
+        <div class="text-center text-white mb-3">
 
             <h1 class="display-2 cherry-bomb-one-regular">
                 🗺️ Explora nuestra biodiversidad
@@ -226,7 +237,7 @@
 
                     <div class="text-center">
 
-                        <div class="fs-1 mb-3">
+                        <div class="fs-1 mb-1">
                             🗺️
                         </div>
 
@@ -237,7 +248,7 @@
                             Selecciona una región
                         </h2>
 
-                        <p id="region-descripcion" class="fs-5">
+                        <p id="region-descripcion" class="fs-6">
                             Haz clic en uno de los puntos del mapa para descubrir
                             qué animales de EduFauna se encuentran en esa región.
                         </p>
@@ -248,7 +259,7 @@
                     <!-- LISTA DE ANIMALES -->
                     <div
                         id="region-animales"
-                        class="mt-4"
+                        class="mt-1"
                     >
                     </div>
 
@@ -257,8 +268,8 @@
             </div>
 
         </div>
-
     </div>
+
 
 </section>
 
@@ -791,7 +802,7 @@
 
                     <div class="mt-4">
 
-                        <span class="badge bg-verde fs-6 p-3">
+                        <span class="badge bg-amarillo fs-6 p-3">
                             17 especies estudiadas
                         </span>
 
@@ -802,7 +813,7 @@
             </div>
 
         </div>
-
+        
     </div>
 
 </section>
@@ -859,10 +870,11 @@
                     </div>
                 </div>
             </div>
+            
         </div>
     </section>
 
-    <section class="position-relative overflow-hidden container-fluid pt-5 text-center">
+    <section class="position-relative overflow-hidden bg-degradado-blanco-azul container-fluid pt-5 text-center">
         <div class="custom-shape-divider-top-1783304606">
             <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
                 <path d="M0,0V46.29c47.79,22.2,103.59,32.17,158,28,70.36-5.37,136.33-33.31,206.8-37.5C438.64,32.43,512.34,53.67,583,72.05c69.27,18,138.3,24.88,209.4,13.08,36.15-6,69.85-17.84,104.45-29.34C989.49,25,1113-14.29,1200,52.47V0Z" opacity=".25" class="shape-fill"></path>

@@ -1,10 +1,11 @@
 const modeloRana=document.getElementById("modeloRana");
 const sections = Array.from(document.querySelectorAll("section"));
+const audio=document.getElementById('audio')
 
 //POSICIONES DENTRO DE LAS SECCIONES NO TOCAR
-const shiftPositions=[25,150,50,45,25];
+const shiftPositions=[25,65,65,65,60,60,60,25];
 //POSICIONES DE LOS ANGULOS NO TOCAR
-const cameraOrbits=[[135,90],[135,90],[135,90],[45,90],[45,90]];
+const cameraOrbits=[[135,90],[135,90],[135,90],[135,90],[135,90],[135,90],[135,90],[45,90]];
 
 const interpolate =(start,end,progress)=> start+(end-start)*progress;
 
@@ -40,6 +41,7 @@ window.addEventListener("scroll", ()=>{
     modeloRana.style.transform = `translateX(${currentShift}%)`;
     modeloRana.setAttribute('camera-orbit', `${currentOrbit[0]}deg ${currentOrbit[1]}deg`);
 });
+
 
 /* =====================================================
    MAPA INTERACTIVO DE EDUFAUNA

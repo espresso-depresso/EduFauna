@@ -63,7 +63,11 @@ main {
     }
 
 
-
+@media screen and (max-width:768px){
+    #modeloRana{
+        display:none;
+    }
+}
 
 
     .custom-shape-divider-bottom-1782702114 {
@@ -525,7 +529,7 @@ main {
     border: none;
     border-radius: 50%;
 
-    background-color: #f5c542;
+    background-color: #F2B95F;
     color: #ffffff;
 
     font-size: 11px;
@@ -551,7 +555,7 @@ main {
 .mapa-punto:hover {
     transform: translate(-50%, -50%) scale(1.25);
 
-    background-color: #2ca58d;
+    background-color: #CDD69F;
 
     box-shadow:
         0 0 0 8px rgba(44, 165, 141, 0.25),
@@ -684,9 +688,9 @@ main {
 
     border-radius: 20px;
 
-    padding: 15px;
+    padding: 10px;
 
-    margin-bottom: 12px;
+    margin-bottom: 5px;
 
     transition:
         transform 0.2s ease,
@@ -834,7 +838,7 @@ main {
     line-height: 1;
 
     color:
-        #2ca58d;
+        #5C8A3D;
 
 }
 
@@ -950,7 +954,7 @@ main {
 .barra-anfibios {
 
     background-color:
-        #2ca58d;
+        #5C8A3D;
 
 }
 
@@ -958,7 +962,7 @@ main {
 .barra-aves {
 
     background-color:
-        #f5c542;
+        #F2B95F;
 
 }
 
@@ -966,7 +970,7 @@ main {
 .barra-mamiferos {
 
     background-color:
-        #b26836;
+        #E0593E;
 
 }
 
@@ -974,7 +978,7 @@ main {
 .barra-insectos {
 
     background-color:
-        #913710;
+        #6E3B3A;
 
 }
 
@@ -1027,9 +1031,12 @@ main {
    ===================================================== */
 
 .distribucion-geografica {
-
-    background-color:
-        #eaf6f2;
+  background:
+        linear-gradient(
+            180deg,
+            #ffffff 0%,
+            #f8f4df 100%
+        );
 
 }
 
@@ -1170,8 +1177,8 @@ main {
     background:
         linear-gradient(
             90deg,
-            #2ca58d,
-            #74c69d
+            #5C8A3D,
+            #CDD69F
         );
 
     border-radius:
