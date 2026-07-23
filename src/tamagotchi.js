@@ -8,7 +8,7 @@ const renderer = new THREE.WebGLRenderer({ antialias: true });
 renderer.setSize(window.innerWidth, window.innerHeight);
 document.body.appendChild(renderer.domElement);
 
-const ambientLight = new THREE.AmbientLight(0xffffff, 0.6);
+const ambientLight = new THREE.AmbientLight(0xffffff, 0.9);
 scene.add(ambientLight);
 
 const directionalLight = new THREE.DirectionalLight(0xffffff, 0.8);
@@ -30,8 +30,8 @@ loader.load(
     '../manatee.glb',
     function (gltf) {
         pet = gltf.scene;
-        pet.scale.set(2, 2,0);
-        pet.position.set(0, 0, 0);
+        pet.scale.set(0.6, 0.4,0.4);
+        pet.position.set(0,-3,0);
         scene.add(pet);
         console.log("Se cargó el modelo correctamente");
     },
@@ -89,8 +89,8 @@ function alimentar() {
     if (stats.muerto || !pet) return;
     stats.hambre = Math.min(stats.hambre + 20, 100);
     
-    pet.scale.set(1, 1.3, 1);
-    setTimeout(() => pet.scale.set(1, 1, 1), 300);
+    pet.scale.set(0.6, 0.6,0.4);
+    setTimeout(() => pet.scale.set(0.6, 0.4,0.4), 300);
     
     Actualizar();
 }
@@ -105,7 +105,7 @@ function jugar() {
         jumpCount += 0.2;
         if (jumpCount >= Math.PI) {
             clearInterval(jumpInterval);
-            pet.position.y = 0;
+            pet.position.y = -3;
         }
     }, 20);
 
@@ -125,3 +125,11 @@ function animate() {
 }
 
 animate();
+
+
+function interactuar(){
+
+
+
+    
+}

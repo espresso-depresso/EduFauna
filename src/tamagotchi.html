@@ -86,50 +86,51 @@
         </div>
     </header>
 
-<section class="container-fluid">
+<section class="container-fluid overflow-hidden">
+    <audio src="../sonido.mp3"></audio>
     <script src="tamagotchi.js"></script>
 </section>
 
-<section class="container-fluid p-4">
+<section class="container-fluid p-4 overflow-hidden">
     <div class="row row-cols-md-3 g-4 row-cols-1 justify-content-between" id="ui">
         <div class="col">
-            Hambre:
-            <span id="hambre">
+            <h1 class="cherry-bomb-one-regular"> Hambre: 
+                <span id="hambre">
                 100
             </span>
+            </h1>  
         </div>
         <div class="col">
-            Bienestar:
-            <span id="binestar">
+            <h1 class="cherry-bomb-one-regular">Bienestar: <span id="binestar">
                 100
-            </span>
+            </span></h1>
         </div>
         <div class="col">
-            Estado:
-            <span id="estado">
-                Feliz
+            <h1 class="cherry-bomb-one-regular">Estado: <span id="estado">
+                Feliz</span></h1>
             </button>
         </div>
     </div>
 
     <div class="row row-cols-md-4 g-4 row-cols-1 justify-content-between" id="controles">
+    
         <div class="col">
-            <button onclick="alimentar()">
+            <button onclick="alimentar()" class="bg-amarillo btn fw-bold">
                 Comida
             </button>
         </div>
         <div class="col">
-            <button class="btn-info" onclick="dormir()">
+            <button class="btn bg-amarillo fw-bold" onclick="dormir()">
                 Dormir
             </button>
         </div>
         <div class="col">
-            <button onclick="jugar()">
+            <button class="bg-amarillo btn fw-bold" onclick="jugar()">
                 Jugar
             </button>
         </div>
         <div class="col">
-            <button onclick="interactuar()">
+            <button class="bg-amarillo btn fw-bold" onclick="interactuar()">
                 Interactuar
             </button>
         </div>
