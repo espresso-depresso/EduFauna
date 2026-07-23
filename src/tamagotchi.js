@@ -2,11 +2,16 @@ const scene = new THREE.Scene();
 scene.background = new THREE.Color("skyblue");
 
 const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
-camera.position.z = 5;
+camera.position.set(0, 0, 5);
 
 const renderer = new THREE.WebGLRenderer({ antialias: true });
 renderer.setSize(window.innerWidth, window.innerHeight);
 document.body.appendChild(renderer.domElement);
+
+
+const controls = new THREE.OrbitControls(camera, renderer.domElement);
+controls.enableDamping = true;
+controls.dampingFactor = 0.05;
 
 const ambientLight = new THREE.AmbientLight(0xffffff, 0.9);
 scene.add(ambientLight);
@@ -30,8 +35,8 @@ loader.load(
     '../manatee.glb',
     function (gltf) {
         pet = gltf.scene;
-        pet.scale.set(0.6, 0.4,0.4);
-        pet.position.set(0,-3,0);
+        pet.scale.set(0.6, 0.6, 0.4);
+        pet.position.set(0, -3, 0);
         scene.add(pet);
         console.log("Se cargó el modelo correctamente");
     },
@@ -53,7 +58,7 @@ let stats = {
 
 function Actualizar() {
     document.getElementById('hambre').innerText = Math.round(stats.hambre);
-    document.getElementById('bienestar').innerText = Math.round(stats.bienestar);
+    document.getElementById('binestar').innerText = Math.round(stats.bienestar);
 
     let status = "Feliz";
     if (stats.muerto) status = "Muerto";
@@ -61,8 +66,6 @@ function Actualizar() {
     else if (stats.bienestar < 30) status = "Triste";
     document.getElementById('estado').innerText = status;
 }
-
-
 
 setInterval(() => {
     if (stats.muerto) return;
@@ -89,11 +92,12 @@ function alimentar() {
     if (stats.muerto || !pet) return;
     stats.hambre = Math.min(stats.hambre + 20, 100);
     
-    pet.scale.set(0.6, 0.6,0.4);
-    setTimeout(() => pet.scale.set(0.6, 0.4,0.4), 300);
+    pet.scale.set(0.6, 0.6, 0.4);
+    setTimeout(() => pet.scale.set(0.6, 0.4, 0.4), 300);
     
     Actualizar();
 }
+
 
 function jugar() {
     if (stats.muerto || !pet) return;
@@ -101,7 +105,7 @@ function jugar() {
     
     let jumpCount = 0;
     const jumpInterval = setInterval(() => {
-        pet.position.y = Math.sin(jumpCount) * 0.5;
+        pet.position.y = -3 + Math.sin(jumpCount) * 0.5;
         jumpCount += 0.2;
         if (jumpCount >= Math.PI) {
             clearInterval(jumpInterval);
@@ -112,24 +116,40 @@ function jugar() {
     Actualizar();
 }
 
+
+function interactuar() {
+    if (stats.muerto || !pet) return;
+
+    const audio = document.getElementById('sonidoManati') || document.querySelector('audio');
+    if (audio) {
+        audio.currentTime = 0;
+        audio.play().catch(e => console.log("Error al reproducir audio:", e));
+    }
+
+    let rotationCount = 0;
+    const spinInterval = setInterval(() => {
+        pet.rotation.y += 0.2;
+        rotationCount += 0.2;
+        if (rotationCount >= Math.PI * 2) {
+            clearInterval(spinInterval);
+        }
+    }, 20);
+
+    stats.bienestar = Math.min(stats.bienestar + 5, 100);
+    Actualizar();
+}
+
 function animate() {
     requestAnimationFrame(animate);
 
+    controls.update();
+
     if (pet && !stats.muerto) {
         const time = clock.getElapsedTime();
-        pet.scale.y = 1 + Math.sin(time * 3) * 0.05;
-        pet.rotation.y = Math.sin(time * 0.5) * 0.3;
+        pet.scale.y = 0.4 + Math.sin(time * 3) * 0.02;
     }
 
     renderer.render(scene, camera);
 }
 
 animate();
-
-
-function interactuar(){
-
-
-
-    
-}
